@@ -1,0 +1,46 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:SmHmItrf.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="SmHmItrf.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="SmHmItrf">
+
+	<DockPanel>
+		<StackPanel>
+			<Button x:Name="bAddRoom">Add</Button>
+			<Button x:Name="bEditRoom">Edit</Button>
+			<Button x:Name="bDeleteRoom">Delete</Button>
+		</StackPanel>
+		<DataGrid ItemsSource="{Binding Rooms}" AutoGenerateColumns="False" x:Name="gDataGrid" VerticalAlignment="Stretch">
+			<DataGrid.Columns>
+				<DataGridTextColumn Header="Room Id" Binding="{Binding ID}" />
+				<DataGridTextColumn Header="Room Name" Binding="{Binding RoomName}" />
+				<DataGridTextColumn Header="Peripheral Light Name" Binding="{Binding PeripheralLightName}" />
+				<DataGridTextColumn Header="Peripheral Light Code" Binding="{Binding PeripheralLightCode}" />
+				<DataGridTextColumn Header="Main Light Name" Binding="{Binding MainLightName}" />
+				<DataGridTextColumn Header="Main Light Code" Binding="{Binding MainLightCode}" />
+			</DataGrid.Columns>
+		</DataGrid>
+
+	
+		
+		<!--<ListBox ItemsSource="{Binding Rooms}">
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<StackPanel>
+						<TextBlock Text="{Binding RoomName}" />
+						<TextBlock Text="{Binding PeripheralLightName}" />
+						<TextBlock Text="{Binding PeripheralLightCode}" />
+						<TextBlock Text="{Binding MainLightName}" />
+						<TextBlock Text="{Binding MainLightCode}" />
+					</StackPanel>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>-->
+	</DockPanel>
+	
+</Window>
